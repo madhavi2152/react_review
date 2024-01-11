@@ -33,7 +33,7 @@ function App() {
       return [
         ...temp,
         {
-          id: idt,
+          id: uuid4(),
           description: descriptiont,
           amount: amount,
           category: category,

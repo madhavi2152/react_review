@@ -4,9 +4,11 @@ function Form(props) {
   let [Description, setDescription] = useState();
   let [Amount, setAmount] = useState();
   let [Selectedvalue, setSelectedValue] = useState();
-  let [val, setVal] = useState("enter the description");
+  let [val, setVal] = useState("");
+  let [amountval, setAmountVal] = useState();
   function handleSubmit() {
-    setVal("enter a value");
+    setVal("");
+    setAmountVal("");
     props.handleAdd(Description, Amount, Selectedvalue);
   }
   const handleDropdown = (event) => {
@@ -16,17 +18,21 @@ function Form(props) {
   return (
     <>
       <input
-        placeholder={val}
+        placeholder="enter description"
+        value={val}
         onChange={(data) => {
           setDescription(data.target.value);
+          setVal(data.target.value);
         }}
       />
       <br />
       <br />
       <input
         placeholder="enter the amount spent"
+        value={amountval}
         onChange={(data) => {
           setAmount(Number(data.target.value));
+          setAmountVal(data.target.value);
         }}
       />
       <br />

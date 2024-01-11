@@ -12,6 +12,7 @@ function Transactions(props) {
     setEdit(false);
   }
   function handleDelete() {
+    console.log(id);
     del(id);
   }
   function handleSubmit() {

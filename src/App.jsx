@@ -7,18 +7,19 @@ import { v4 as uuid4 } from "uuid";
 function App() {
   let [Filter, setFilter] = useState("");
   let [Data, setData] = useState([
-    { id: uuid4, description: "Madv", amount: 15, category: "food" },
+    { id: uuid4(), description: "Madv", amount: 15, category: "food" },
   ]);
   function handleAdd(Description, Amount, Category) {
     setData((prevData) => [
       ...prevData,
       {
-        id: uuid4,
+        id: uuid4(),
         description: Description,
         amount: Amount,
         category: Category,
       },
     ]);
+    console.log(Data);
   }
   function handleFilter(value) {
     if (value === "all") {
